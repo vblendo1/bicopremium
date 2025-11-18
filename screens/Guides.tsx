@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useUser } from '../hooks/useUser';
 import { mockGuides } from '../services/mockData';
@@ -10,12 +9,18 @@ export const Guides: React.FC = () => {
   const { isVip } = useUser();
   const [selectedGuide, setSelectedGuide] = useState<Guide | null>(null);
 
+  const header = (
+    <div className="text-center">
+      <h1 className="text-4xl font-extrabold text-brand-yellow">Guias Black: Atalhos para o Lucro</h1>
+      <p className="mt-2 text-gray-400">Enquanto outros perdem tempo pesquisando, você copia, cola e lucra. Simples assim.</p>
+    </div>
+  );
+
   if (!isVip) {
     return (
         <div>
             <div className="text-center mb-8">
-                <h1 className="text-4xl font-extrabold text-brand-yellow">Guia Black de Renda Extra</h1>
-                <p className="mt-2 text-gray-400">Mini e-books, vídeos e tutoriais para acelerar seus resultados.</p>
+                {header}
             </div>
             <Paywall featureName="os Guias Black" />
         </div>
@@ -36,10 +41,7 @@ export const Guides: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-brand-yellow">Guia Black de Renda Extra</h1>
-        <p className="mt-2 text-gray-400">Mini e-books, vídeos e tutoriais para acelerar seus resultados.</p>
-      </div>
+      {header}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {mockGuides.map(guide => (

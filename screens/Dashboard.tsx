@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useUser } from '../hooks/useUser';
@@ -15,11 +14,11 @@ export const Dashboard: React.FC = () => {
                 <div className="flex items-center gap-3">
                     <BanknotesIcon className="w-8 h-8"/>
                     <p className="font-bold text-center sm:text-left">
-                        <span className="text-lg">Dica nova:</span> Como ganhar dinheiro sem sair do sofá!
+                        <span className="text-lg">Dica nova:</span> R$ 300 com um item da sua casa.
                     </p>
                 </div>
                 <div className="flex items-center gap-4 mt-3 sm:mt-0">
-                    <Link to="/earn-now" className="font-bold underline hover:text-gray-700">Clique aqui</Link>
+                    <Link to="/earn-now" className="font-bold underline hover:text-gray-700">Ver o segredo</Link>
                     <button onClick={() => setShowNotification(false)} className="p-1 rounded-full hover:bg-black/10">
                         <XIcon className="w-5 h-5" />
                     </button>
@@ -29,10 +28,10 @@ export const Dashboard: React.FC = () => {
 
       <section className="text-center bg-brand-gray p-8 rounded-xl shadow-2xl shadow-black/40 border border-brand-yellow/20">
         <h1 className="text-4xl md:text-5xl font-extrabold text-brand-yellow mb-4">
-          Desbloqueie seu Potencial de Ganhos
+          A Máquina de Fazer Grana no Seu Bolso
         </h1>
         <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-          Acesso instantâneo a oportunidades, ferramentas e guias exclusivos para turbinar sua renda extra. Sem promessas, só informação de valor.
+          Chega de perder tempo. Aqui você encontra os atalhos, as ferramentas e as informações que os outros não te contam para fazer dinheiro RÁPIDO.
         </p>
         {!isVip && (
           <div className="mt-8">
@@ -40,50 +39,50 @@ export const Dashboard: React.FC = () => {
                 onClick={purchaseSubscription}
                 className="bg-brand-yellow text-brand-dark font-bold py-4 px-10 rounded-full text-xl hover:bg-yellow-300 transition-transform transform hover:scale-105 shadow-lg shadow-brand-yellow/30 flex items-center gap-3 mx-auto">
               <BanknotesIcon className="w-7 h-7" />
-              <span>Virar VIP Agora</span>
+              <span>ATIVAR MODO LUCRATIVO</span>
             </button>
           </div>
         )}
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold mb-6 text-center">Nossas Ferramentas</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Seu Arsenal para Fazer Dinheiro</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <FeatureCard
             to="/earn-now"
             icon={<BoltIcon className="w-8 h-8 text-brand-yellow" />}
             title="Ganhe Agora"
-            description="Dicas diretas e atalhos para fazer grana HOJE, mesmo sem experiência."
+            description="Métodos testados para fazer grana HOJE. Para quem tem pressa e não aceita desculpas."
             locked={!isVip}
           />
           <FeatureCard
             to="/opportunities"
             icon={<BarChartIcon className="w-8 h-8 text-brand-yellow" />}
-            title="Oportunidades Premium"
-            description="Lista curada de bicos e freelas lucrativos. Detalhes exclusivos para membros."
+            title="Oportunidades de Elite"
+            description="Uma lista filtrada de bicos que pagam bem de verdade. Esqueça o salário mínimo."
           />
           <FeatureCard
             to="/guides"
             icon={<BookOpenIcon className="w-8 h-8 text-brand-yellow" />}
-            title="Guias Black de Renda"
-            description="E-books e vídeos direto ao ponto para você começar a ganhar dinheiro rápido."
+            title="Guias Black"
+            description="O passo a passo mastigado dos métodos mais quentes. É só copiar, colar e lucrar."
             locked={!isVip}
           />
            <FeatureCard
             to="/calculator"
             icon={<DollarSignIcon className="w-8 h-8 text-brand-yellow" />}
             title="Calculadora de Grana"
-            description="Estime seu potencial de ganhos semanais com diferentes tipos de bicos."
+            description="Descubra o quanto de dinheiro você está deixando na mesa e como virar o jogo."
             locked={!isVip}
           />
         </div>
       </section>
 
        <section className="bg-brand-gray p-8 rounded-xl text-center">
-            <h2 className="text-3xl font-bold text-brand-yellow mb-3">Comunidade VIP no Telegram</h2>
-            <p className="text-gray-300 mb-6">Receba alertas diários, dicas rápidas e materiais extras antes de todo mundo.</p>
+            <h2 className="text-3xl font-bold text-brand-yellow mb-3">Comunidade VIP: Acesso Proibido</h2>
+            <p className="text-gray-300 mb-6">Alertas em tempo real e dicas que não postamos em nenhum outro lugar. Só para a elite.</p>
             <button disabled={!isVip} className="bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center gap-3 mx-auto">
-                {isVip ? 'Acessar Comunidade' : <><LockIcon className="w-5 h-5" /><span>Exclusivo para VIPs</span></>}
+                {isVip ? 'Entrar no Grupo Secreto' : <><LockIcon className="w-5 h-5" /><span>Apenas para Membros VIP</span></>}
             </button>
         </section>
     </div>

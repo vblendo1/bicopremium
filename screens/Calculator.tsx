@@ -34,7 +34,7 @@ const CalculatorTool: React.FC = () => {
 
     return (
         <div className="bg-brand-gray p-4 md:p-8 rounded-xl shadow-2xl shadow-black/40 border border-brand-yellow/20">
-            <h2 className="text-3xl font-bold mb-6 text-center text-white">Calculadora de Ganhos</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-white">Simulador de Riqueza</h2>
             
             <div className="space-y-6">
                 {Object.keys(BICO_TYPES).map(bicoKey => {
@@ -61,11 +61,11 @@ const CalculatorTool: React.FC = () => {
             </div>
 
             <div className="mt-10 pt-6 border-t-2 border-brand-yellow/20 text-center">
-                <p className="text-lg text-gray-300">Seu potencial de ganho semanal é de:</p>
+                <p className="text-lg text-gray-300">Seu potencial de massacre financeiro semanal é de:</p>
                 <p className="text-4xl sm:text-5xl font-extrabold text-brand-yellow my-2">
                     R$ {totalWeeklyEarnings.toFixed(2).replace('.', ',')}
                 </p>
-                <p className="text-sm text-gray-500">*Esta é uma estimativa baseada nas médias de mercado.</p>
+                <p className="text-sm text-gray-500">*Cálculo baseado em quem não tem medo de trabalhar.</p>
             </div>
         </div>
     );
@@ -78,14 +78,14 @@ export const Calculator: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-brand-yellow">Calculadora de Grana</h1>
-        <p className="mt-2 text-gray-400">Estime quanto você pode ganhar por semana combinando diferentes tipos de bicos.</p>
+        <h1 className="text-4xl font-extrabold text-brand-yellow">Calculadora da Verdade</h1>
+        <p className="mt-2 text-gray-400">Descubra quanto dinheiro você está deixando na mesa por pura preguiça. Os números não mentem.</p>
       </div>
 
       {isVip ? (
         <CalculatorTool />
       ) : (
-        <Paywall featureName="a Calculadora de Grana" />
+        <Paywall featureName="a Calculadora da Verdade" />
       )}
     </div>
   );

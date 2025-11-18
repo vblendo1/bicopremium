@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useUser } from '../hooks/useUser';
 import { earnNowTips, jobLinks } from '../services/mockData';
@@ -21,7 +20,8 @@ const ModalPaywall: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     <XIcon className="w-6 h-6" />
                 </button>
                 <h2 className="text-3xl font-extrabold text-brand-yellow mb-4">Quer mudar de vida ou continuar se lamentando?</h2>
-                <p className="text-gray-300 mb-6 text-lg">Desbloqueie <span className="font-bold">TODOS</span> os métodos, dicas e atalhos pra fazer grana <span className="font-bold text-brand-yellow">HOJE.</span></p>
+                <p className="text-gray-300 mb-2 text-lg">Desbloqueie <span className="font-bold">TODOS</span> os métodos, dicas e atalhos pra fazer grana <span className="font-bold text-brand-yellow">HOJE.</span></p>
+                <p className="text-sm text-gray-500 mb-6">Milhares de membros já estão lucrando com isso.</p>
                 <button
                     onClick={handlePurchase}
                     className="w-full bg-brand-yellow text-brand-dark font-bold py-4 px-6 rounded-lg text-xl hover:bg-yellow-300 transition-transform transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg shadow-brand-yellow/30"
@@ -80,21 +80,21 @@ export const EarnNow: React.FC = () => {
             {selectedTip && <TipDetailModal tip={selectedTip} onClose={() => setSelectedTip(null)} />}
             
             <div className="text-center">
-                <h1 className="text-4xl font-extrabold text-brand-yellow">Ganhe Agora</h1>
-                <p className="mt-2 text-gray-400 max-w-2xl mx-auto">Dicas diretas e links úteis pra você parar de dar desculpas e começar a fazer dinheiro.</p>
+                <h1 className="text-4xl font-extrabold text-brand-yellow">Ganhe Agora: Sem Enrolação</h1>
+                <p className="mt-2 text-gray-400 max-w-2xl mx-auto">Chega de desculpas. Aqui está o caminho mais curto entre você e o dinheiro na sua conta.</p>
             </div>
 
             {/* Dicas de Ganhos Imediatos */}
             <section>
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3"><BoltIcon className="w-8 h-8 text-brand-yellow" /> Dicas de Ganhos Imediatos</h2>
+                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3"><BoltIcon className="w-8 h-8 text-brand-yellow" /> Dicas de Dinheiro Rápido</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {earnNowTips.map(tip => (
                         <div key={tip.id} onClick={() => handleTipClick(tip)} className="bg-brand-gray p-6 rounded-lg cursor-pointer border-2 border-transparent hover:border-brand-yellow/80 transition-all transform hover:-translate-y-1">
                             <h3 className="text-xl font-bold text-white">{tip.title}</h3>
                             <div className="flex items-center justify-between mt-4">
-                                <span className="text-gray-400">Passos simples para executar hoje</span>
+                                <span className="text-gray-400">O passo a passo para lucrar hoje.</span>
                                 {!isVip && <LockIcon className="w-5 h-5 text-red-500" />}
-                                {isVip && <span className="text-brand-yellow font-bold">Ver agora &rarr;</span>}
+                                {isVip && <span className="text-brand-yellow font-bold">Ver o método &rarr;</span>}
                             </div>
                         </div>
                     ))}
